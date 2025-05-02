@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Traffic Signs Reference</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --danger: #e74c3c;
+            --warning: #f39c12;
+            --success: #2ecc71;
+            --light: #ecf0f1;
+            --dark: #34495e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            background-color: var(--dark);
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--secondary);
+        }
+        
+        .category {
+            margin: 30px 0;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .category h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .signs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .sign-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .sign-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .sign-number {
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .sign-content {
+            padding: 15px;
+        }
+        
+        .sign-content h3 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .sign-image {
+            height: 150px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-weight: bold;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .signs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Category specific colors */
+        .danger-signs {
+            border-left: 4px solid var(--danger);
+        }
+        
+        .prohibitory-signs {
+            border-left: 4px solid var(--warning);
+        }
+        
+        .mandatory-signs {
+            border-left: 4px solid var(--success);
+        }
+        
+        .informative-signs {
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .safety-tips {
+            border-left: 4px solid #9b59b6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Road Traffic Signs Reference</h1>
+            <p>Comprehensive guide to all traffic signs and their meanings</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#danger-signs">Danger/Warning Signs</a></li>
+                <li><a href="#prohibitory-signs">Prohibitory Signs</a></li>
+                <li><a href="#mandatory-signs">Mandatory Signs</a></li>
+                <li><a href="#informative-signs">Informative Signs</a></li>
+                <li><a href="#safety-tips">Safety Tips</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <section id="danger-signs" class="category danger-signs">
+            <h2>Danger/Warning Signs</h2>
+            <div class="signs-grid">
+                <!-- Signs from IMG_4523 and IMG_4524 -->
+                <div class="sign-card">
+                    <div class="sign-number">1</div>
+                    <div class="sign-image">[Image of Railway Crossing with Gate]</div>
+                    <div class="sign-content">
+                        <h3>Railway Level Crossing with Gate</h3>
+                        <p>Warning of railway crossing with gates ahead</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">2</div>
+                    <div class="sign-image">[Image of Railway Crossing without Gate]</div>
+                    <div class="sign-content">
+                        <h3>Railway Level Crossing without Gate</h3>
+                        <p>Warning of railway crossing without gates ahead</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">17</div>
+                    <div class="sign-image">[Image of Dangerous Bend Right]</div>
+                    <div class="sign-content">
+                        <h3>Dangerous Bend to Right</h3>
+                        <p>Warning of sharp right bend ahead</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">19</div>
+                    <div class="sign-image">[Image of Dangerous Bend Left]</div>
+                    <div class="sign-content">
+                        <h3>Dangerous Bend to Left</h3>
+                        <p>Warning of sharp left bend ahead</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">26</div>
+                    <div class="sign-image">[Image of Slippery Surface]</div>
+                    <div class="sign-content">
+                        <h3>Slippery Road Surface</h3>
+                        <p>Warning of slippery conditions ahead</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">24</div>
+                    <div class="sign-image">[Image of Animals]</div>
+                    <div class="sign-content">
+                        <h3>Beware of Animals</h3>
+                        <p>Warning of animals crossing area</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="prohibitory-signs" class="category prohibitory-signs">
+            <h2>Regulatory Signs (Prohibitory)</h2>
+            <div class="signs-grid">
+                <!-- Signs from IMG_4525 and IMG_4526 -->
+                <div class="sign-card">
+                    <div class="sign-number">STOP</div>
+                    <div class="sign-image">[Image of STOP Sign]</div>
+                    <div class="sign-content">
+                        <h3>STOP</h3>
+                        <p>Come to complete stop at intersection</p>
+                        <p>Variations: STOP AT INTERSECTION, POLICE CHECK, HIGHWAY SURVEY</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">80</div>
+                    <div class="sign-image">[Image of Speed Limit 80]</div>
+                    <div class="sign-content">
+                        <h3>Speed Limit (Maximum)</h3>
+                        <p>Maximum speed limit of 80 km/h</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">NO LEFT</div>
+                    <div class="sign-image">[Image of No Left Turn]</div>
+                    <div class="sign-content">
+                        <h3>No Left Turn</h3>
+                        <p>Left turns prohibited</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">NO RIGHT</div>
+                    <div class="sign-image">[Image of No Right Turn]</div>
+                    <div class="sign-content">
+                        <h3>No Right Turn</h3>
+                        <p>Right turns prohibited</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">NO U-TURN</div>
+                    <div class="sign-image">[Image of No U-Turn]</div>
+                    <div class="sign-content">
+                        <h3>No U-Turn</h3>
+                        <p>U-turns prohibited</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">NO ENTRY</div>
+                    <div class="sign-image">[Image of No Entry]</div>
+                    <div class="sign-content">
+                        <h3>No Entry for All Vehicles</h3>
+                        <p>Entry prohibited for all vehicles</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">NO PARKING</div>
+                    <div class="sign-image">[Image of No Parking]</div>
+                    <div class="sign-content">
+                        <h3>Parking Prohibited</h3>
+                        <p>No parking in this area</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">NO STOPPING</div>
+                    <div class="sign-image">[Image of No Stopping]</div>
+                    <div class="sign-content">
+                        <h3>No Stopping</h3>
+                        <p>Stopping prohibited in this area</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="mandatory-signs" class="category mandatory-signs">
+            <h2>Regulatory Signs (Mandatory)</h2>
+            <div class="signs-grid">
+                <!-- Signs from IMG_4528 and IMG_4527 -->
+                <div class="sign-card">
+                    <div class="sign-number">KEEP RIGHT</div>
+                    <div class="sign-image">[Image of Keep Right]</div>
+                    <div class="sign-content">
+                        <h3>Keep Right</h3>
+                        <p>Drivers must keep to the right</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">30</div>
+                    <div class="sign-image">[Image of Speed Limit 30]</div>
+                    <div class="sign-content">
+                        <h3>Speed Limit (Minimum)</h3>
+                        <p>Minimum speed limit of 30 km/h</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">ONE WAY</div>
+                    <div class="sign-image">[Image of One Way]</div>
+                    <div class="sign-content">
+                        <h3>One Way</h3>
+                        <p>Traffic flows in one direction only</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">ROUNDABOUT</div>
+                    <div class="sign-image">[Image of Roundabout]</div>
+                    <div class="sign-content">
+                        <h3>Roundabout</h3>
+                        <p>Roundabout ahead - give way to traffic from your right</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">CYCLE TRACK</div>
+                    <div class="sign-image">[Image of Cycle Track]</div>
+                    <div class="sign-content">
+                        <h3>Compulsory Cycle Track</h3>
+                        <p>Cyclists must use this track</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">PEDESTRIAN</div>
+                    <div class="sign-image">[Image of Pedestrian Track]</div>
+                    <div class="sign-content">
+                        <h3>Pedestrian Track</h3>
+                        <p>Pedestrians must use this path</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="informative-signs" class="category informative-signs">
+            <h2>Informative Signs</h2>
+            <div class="signs-grid">
+                <!-- Signs from IMG_4529 -->
+                <div class="sign-card">
+                    <div class="sign-number">HOSPITAL</div>
+                    <div class="sign-image">[Image of Hospital Sign]</div>
+                    <div class="sign-content">
+                        <h3>Hospital</h3>
+                        <p>Direction to nearest hospital</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">TELEPHONE</div>
+                    <div class="sign-image">[Image of Telephone Sign]</div>
+                    <div class="sign-content">
+                        <h3>Telephone</h3>
+                        <p>Location of public telephone</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">FUEL</div>
+                    <div class="sign-image">[Image of Filling Station]</div>
+                    <div class="sign-content">
+                        <h3>Filling Station</h3>
+                        <p>Direction to nearest fuel station</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">MOTOR PARK</div>
+                    <div class="sign-image">[Image of Motor Park]</div>
+                    <div class="sign-content">
+                        <h3>Motor Park</h3>
+                        <p>Direction to vehicle parking area</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">REST AREA</div>
+                    <div class="sign-image">[Image of Rest Area]</div>
+                    <div class="sign-content">
+                        <h3>Rest Area</h3>
+                        <p>Location of rest stop facilities</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">CONSTRUCTION</div>
+                    <div class="sign-image">[Image of Construction Zone]</div>
+                    <div class="sign-content">
+                        <h3>Construction Zone</h3>
+                        <p>Warning of construction work ahead</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="safety-tips" class="category safety-tips">
+            <h2>Road Accident Prevention Tips</h2>
+            <div class="signs-grid">
+                <!-- Tips from IMG_4530 -->
+                <div class="sign-card">
+                    <div class="sign-content">
+                        <h3>Know Traffic Signs</h3>
+                        <p>Motorists should have knowledge of road traffic signs and how to interpret them.</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-content">
+                        <h3>Avoid Impaired Driving</h3>
+                        <p>Don't drive when fatigued, sleepy, under alcohol influence, or medically unfit.</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-content">
+                        <h3>Safe Overtaking</h3>
+                        <p>Avoid dangerous overtaking at bends, junctions, or on hills.</p>
+                    </div>
+                </div>
+                
+   
+                <div class="sign-card">
+                    <div class="sign-content">
+                        <h3>Safe Overtaking</h3>
+                        <p>Avoid dangerous overtaking at bends, junctions, or on hills.</p>
+                    </div>
+                </div>
+
+                <div class="sign-card">
+                    <div class="sign-content">
+                        <h3>Proper Lighting</h3>
+                        <p>Don't drive at night without functioning front and rear lights.</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-content">
+                        <h3>Speed Limits</h3>
+                        <p>Always obey posted speed limits for safer driving.</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-content">
+                        <h3>Tire Burst Response</h3>
+                        <p>If you have a flat tire, don't panic or brake suddenly. Hold steering firmly and slow down gradually.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Road Traffic Signs Reference. All rights reserved.</p>
+            <p>For educational purposes only.</p>
+        </div>
+    </footer>
+</body>
+</html>

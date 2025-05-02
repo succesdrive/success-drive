@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Safety Guide - Traffic Signs & Accident Prevention</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #f39c12;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --danger: #e74c3c;
+            --warning: #f39c12;
+            --mandatory: #3498db;
+            --informative: #2ecc71;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .logo span {
+            color: var(--accent);
+        }
+        nav {
+            background-color: var(--secondary);
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+        nav li {
+            margin: 0.3rem 0.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: var(--accent);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin: 0.5rem;
+        }
+        .btn:hover {
+            background-color: #e67e22;
+        }
+        .btn-danger {
+            background-color: var(--danger);
+        }
+        .btn-warning {
+            background-color: var(--warning);
+        }
+        .btn-mandatory {
+            background-color: var(--mandatory);
+        }
+        .btn-info {
+            background-color: var(--informative);
+        }
+        .section-title {
+            text-align: center;
+            margin: 2rem 0;
+            color: var(--primary);
+            position: relative;
+        }
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 10px auto;
+        }
+        .sign-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .sign-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            background: white;
+        }
+        .sign-card:hover {
+            transform: translateY(-5px);
+        }
+        .sign-image {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: #f9f9f9;
+        }
+        .sign-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .sign-content {
+            padding: 1.2rem;
+        }
+        .sign-title {
+            font-weight: bold;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        .sign-type {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .type-danger {
+            background-color: #ffebee;
+            color: var(--danger);
+        }
+        .type-warning {
+            background-color: #fff8e1;
+            color: var(--warning);
+        }
+        .type-mandatory {
+            background-color: #e3f2fd;
+            color: var(--mandatory);
+        }
+        .type-prohibitory {
+            background-color: #fce4ec;
+            color: #c2185b;
+        }
+        .type-info {
+            background-color: #e8f5e9;
+            color: var(--informative);
+        }
+        .sign-desc {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 0;
+        }
+        .prevention-tips {
+            background-color: #f5f5f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        .tip {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--accent);
+        }
+        .tip h3 {
+            color: var(--secondary);
+            margin-top: 0;
+        }
+        .accordion {
+            margin: 2rem 0;
+        }
+        .accordion-item {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            overflow: hidden;
+        }
+        .accordion-header {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion-header:hover {
+            background-color: #f1f1f1;
+        }
+        .accordion-content {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-item.active .accordion-content {
+            padding: 1rem;
+            max-height: 1000px;
+        }
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                padding: 3rem 1rem;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav li {
+                margin: 0.2rem 0;
+            }
+        }
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">ROAD<span>SAFETY</span>GUIDE</div>
+        <p>Master traffic signs and prevent accidents</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#danger-signs">Danger Signs</a></li>
+            <li><a href="#warning-signs">Warning Signs</a></li>
+            <li><a href="#regulatory-signs">Regulatory Signs</a></li>
+            <li><a href="#informative-signs">Informative Signs</a></li>
+            <li><a href="#prevention">Accident Prevention</a></li>
+            <li><a href="#quiz">Test Your Knowledge</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>Know Your Traffic Signs</h1>
+        <p>Understanding road signs is crucial for safe driving. Learn to recognize danger signs, regulatory signs, and informative signs to prevent accidents and obey traffic laws.</p>
+        <a href="#danger-signs" class="btn btn-danger">Danger Signs</a>
+        <a href="testing.html" class="btn">Home</a>
+    </section>
+
+    <div class="container">
+        <!-- DANGER SIGNS SECTION -->
+        <section id="danger-signs">
+            <h2 class="section-title">Danger Warning Signs</h2>
+            <p class="section-subtitle">These signs warn of potential hazards or dangerous conditions ahead</p>
+            
+            <div class="sign-grid">
+                <div class="sign-card">
+                    <div class="sign-image">
+                        <img src="777.jpg" alt="Dangerous Curve Ahead" height="200px">
+                    </div>
+                    <div class="sign-content">
+                        <span class="sign-type type-danger">Danger Warning</span>
+                        <h3 class="sign-title">Dangerous Curve Ahead</h3>
+                        <p class="sign-desc">Warns of a sharp curve to the left or right. Reduce speed before entering the curve.</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-image">
+                        <img src="888.jpg" alt="Deer Crossing">
+                    </div>
+                    <div class="sign-content">
+                        <span class="sign-type type-danger">Danger Warning</span>
+                        <h3 class="sign-title">Deer Crossing</h3>
+                        <p class="sign-desc">Indicates area where deer frequently cross the road. Be especially alert at dawn and dusk.</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-image">
+                        <img src="666.jpg" alt="Falling Rocks">
+                    </div>
+                    <div class="sign-content">
+                        <span class="sign-type type-danger">Danger Warning</span>
+                        <h3 class="sign-title">Falling Rocks</h3>
+                        <p class="sign-desc">Warns of potential rock slides or falling rocks, especially in mountainous areas.</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-image">
+                        <img src="555.jpg" alt="Slippery When Wet">
+                    </div>
+                    <div class="sign-content">
+                        <span class="sign-type type-danger">Danger Warning</span>
+                        <h3 class="sign-title">Slippery When Wet</h3>
+                        <p class="sign-desc">Road surface becomes very slippery when wet. Reduce speed in rainy conditions.</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-image">
+                        <img src="444.jpg" alt="Pedestrian Crossing">
+                    </div>
+                    <div class="sign-content">
+                        <span class="sign-type type-danger">Danger Warning</span>
+                        <h3 class="sign-title">Pedestrian Crossing</h3>
+                        <p class="sign-desc">Indicates area where pedestrians frequently cross. Be prepared to stop.</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-image">
+                        <img src="go3.jpg" alt="Railroad Crossing">
+                    </div>
+                    <div class="sign-content">
+                        <span class="sign-type type-danger">Danger Warning</span>
+                        <h3 class="sign-title">Railroad Crossing</h3>
+                        <p class="sign-desc">Warns of railroad tracks ahead. Always look both ways and never stop on tracks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+    <footer id="contact">
+        <div class="contact-info">
+            <div>
+                <h3>Contact Us</h3>
+                <p>123 Safety Drive</p>
+                <p>Your City, State 12345</p>
+                <p>Phone: (555) 987-6543</p>
+                <p>Email: info@roadsafetyguide.com</p>
+            </div>
+            <div>
+                <h3>Resources</h3>
+                <p><a href="#" style="color: white;">Driver's Manual</a></p>
+                <p><a href="#" style="color: white;">Practice Tests</a></p>
+                <p><a href="#" style="color: white;">Safety Videos</a></p>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+        </div>
+        <p>&copy; 2023 Road Safety Guide. All rights reserved.</p>
+    </footer>
+
+    
+
+    <script>
+        // Accordion functionality
+        const accordionItems = document.querySelectorAll('.accordion-item');
+        
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            
+            header.addEventListener('click', () => {
+                const currentlyActive = document.querySelector('.accordion-item.active');
+                
+                // If this item is already active, close it
+                if(item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    return;
+                }
+                
+                // Close any other open items
+                if(currentlyActive) {
+                    currentlyActive.classList.remove('active');
+                }
+                
+                // Open this item
+                item.classList.add('active');
+            });
+        });
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70, // Adjust for fixed header
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

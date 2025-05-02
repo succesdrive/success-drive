@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Driving School - Master the Road with Confidence</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3ce792;
+            --accent: #f39c12;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+        }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .logo span {
+            color: var(--accent);
+        }
+        nav {
+            background-color: var(--secondary);
+            padding: 0.5rem 0;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav li {
+            margin: 0 1rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: var(--accent);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(133, 45, 45, 0.7), rgba(8, 169, 180, 0.7)), url('driving-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #e67e22;
+        }
+        .registration-form {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .form-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .hidden-content {
+            display: none;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+        .course-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .course-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin: 1rem 0;
+        }
+        .features {
+            margin: 1rem 0;
+        }
+        .features li {
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+        .driving-instructions {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .driving-instructions h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+        .step {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--accent);
+        }
+        .step h3 {
+            color: var(--secondary);
+        }
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .testimonial {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .testimonial .quote {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .testimonial .author {
+            font-weight: bold;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">SUCCESS<span>DRIVING</span>SCHOOL</div>
+        <p>Your journey to confident driving starts here</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="testing.html">Home</a></li>
+            <li><a href="te2222.html">Road Safety Signs</a></li>
+            <li><a href="#instructors">Instructors</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+                
+            
+                <div class="course-card">
+                    <h3>Defensive Driving (8 Hours)</h3>
+                    <div class="price"></div>
+                    <div class="features">
+                        <ul>
+                            <li>Advanced hazard recognition</li>
+                            <li>Collision avoidance techniques</li>
+                            <li>Emergency maneuvers</li>
+                            <li>Adverse weather driving</li>
+                            <li>Night driving skills</li>
+                            <li>May qualify for insurance discounts</li>
+                        </ul>
+                    </div>
+                    <p>Take your driving skills to the next level with our advanced defensive driving techniques.</p>
+                </div>
+               
+                
+                <div class="course-card">
+                    <h3>License Test Preparation (5 Hours)</h3>
+                    <div class="price"></div>
+                    <div class="features">
+                        <ul>
+                            <li>Mock road tests</li>
+                            <li>Test route familiarization</li>
+                            <li>Common test mistakes</li>
+                            <li>Examiner expectations</li>
+                            <li>Vehicle inspection points</li>
+                        </ul>
+                    </div>
+                    <p>Boost your confidence and chances of passing the official driving test on your first attempt.</p>
+                </div>
+            </section>
+
+            <section class="driving-instructions">
+                <h2>Comprehensive Guide to Driving a Car</h2>
+                
+                <div class="step">
+                    <h3>1. Pre-Driving Checks</h3>
+                    <p>Before starting the engine, always perform these essential checks:</p>
+                    <ul>
+                        <li>Walk around the vehicle to check for obstacles or hazards</li>
+                        <li>Adjust the seat so you can comfortably reach all controls</li>
+                        <li>Position mirrors to minimize blind spots</li>
+                        <li>Fasten your seatbelt and ensure all passengers do the same</li>
+                        <li>Check that the parking brake is engaged (if applicable)</li>
+                        <li>Verify the gear shift is in Park (automatic) or Neutral (manual)</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <h3>2. Starting the Vehicle</h3>
+                    <p>Proper starting procedure ensures safety and vehicle longevity:</p>
+                    <ul>
+                        <li>Insert the key or press the start button (foot on brake for automatic)</li>
+                        <li>For manual transmission, press the clutch pedal fully</li>
+                        <li>Check dashboard for warning lights</li>
+                        <li>Allow the engine to idle briefly, especially in cold weather</li>
+                        <li>Disengage the parking brake when ready to move</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <h3>3. Basic Vehicle Operation</h3>
+                    <h4>For Automatic Transmission:</h4>
+                    <ul>
+                        <li>Press brake pedal and shift to Drive (D)</li>
+                        <li>Release brake gradually to start moving (no gas needed on level ground)</li>
+                        <li>Apply gentle pressure to accelerator to increase speed</li>
+                    </ul>
+                    
+                    <h4>For Manual Transmission:</h4>
+                    <ul>
+                        <li>Press clutch pedal fully and shift to 1st gear</li>
+                        <li>Slowly release clutch while gently pressing accelerator (find the "bite point")</li>
+                        <li>Once moving, fully release clutch and adjust speed with accelerator</li>
+                        <li>Shift up through gears as speed increases (typically every 15-20 mph)</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <h3>4. Steering and Vehicle Control</h3>
+                    <p>Proper steering techniques ensure smooth, controlled driving:</p>
+                    <ul>
+                        <li>Use the "9 and 3" or "10 and 2" hand positions on the wheel</li>
+                        <li>For sharp turns, use hand-over-hand technique</li>
+                        <li>Look in the direction you want the car to go</li>
+                        <li>Maintain a relaxed grip - avoid "white knuckle" driving</li>
+                        <li>Steer smoothly - avoid jerky movements</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <h3>5. Speed Management</h3>
+                    <p>Controlling your speed is fundamental to safe driving:</p>
+                    <ul>
+                        <li>Always obey posted speed limits</li>
+                        <li>Adjust speed for road conditions (weather, traffic, visibility)</li>
+                        <li>Use the accelerator smoothly - avoid sudden acceleration</li>
+                        <li>Begin braking early for stops - avoid last-minute hard braking</li>
+                        <li>On downhill slopes, use lower gears to control speed</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <h3>6. Braking Techniques</h3>
+                    <p>Proper braking is essential for safety and passenger comfort:</p>
+                    <ul>
+                        <li>Apply brakes gradually and increase pressure as needed</li>
+                        <li>For emergency stops, apply firm, steady pressure (ABS will pulse if equipped)</li>
+                        <li>Look ahead to anticipate stops and brake early</li>
+                        <li>With manual transmission, downshift to assist with braking</li>
+                        <li>After stopping, keep foot on brake until ready to move again</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <h3>7. Lane Positioning and Changing</h3>
+                    <p>Proper lane discipline prevents collisions and maintains traffic flow:</p>
+                    <ul>
+                        <li>Stay centered in your lane unless preparing to turn</li>
+                        <li>Check mirrors and blind spots before changing lanes</li>
+                        <li>Signal your intention at least 100 feet before changing lanes</li>
+                        <li>Make smooth, gradual lane changes - don't swerve</li>
+                        <li>On multi-lane roads, keep right except to pass</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <h3>8. Turning Procedures</h3>
+                    <p>Executing turns properly prevents accidents and traffic violations:</p>
+                    <h4>Right Turns:</h4>
+                    <ul>
+                        <li>Move to the right side of your lane</li>
+                        <li>Signal at least 100 feet before the turn</li>
+                        <li>Check for pedestrians and cyclists</li>
+                        <li>Turn into the nearest lane of the new road</li>
+                    </ul>
+                    
+                    <h4>Left Turns:</h4>
+                    <ul>
+                        <li>Move to the center or left turn lane if available</li>
+                        <li>Yield to oncoming traffic and pedestrians</li>
+                        <li>Turn into the nearest lane of the new road</li>
+                        <li>At traffic lights, enter intersection only if you can clear it</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <h3>9. Parking Techniques</h3>
+                    <p>Master these common parking situations:</p>
+                    <h4>Parallel Parking:</h4>
+                    <ol>
+                        <li>Pull alongside the car in front of the space (2-3 feet apart)</li>
+                        <li>Reverse slowly while turning wheel sharply toward curb</li>
+                        <li>When front wheels align with rear bumper of front car, straighten wheel</li>
+                        <li>Continue reversing while turning wheel away from curb</li>
+                        <li>Straighten wheels and adjust position as needed</li>
+                    </ol>
+                    
+                    <h4>Perpendicular Parking:</h4>
+                    <ul>
+                        <li>Approach the space at a slight angle</li>
+                        <li>Turn the wheel sharply when your front bumper passes the line</li>
+                        <li>Straighten the wheel as you center in the space</li>
+                    </ul>
+                    
+                    <h4>Angle Parking:</h4>
+                    <ul>
+                        <li>Approach the space at the marked angle</li>
+                        <li>Turn the wheel in the direction of the space when your front seat aligns with the line</li>
+                        <li>Pull forward until centered in the space</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <h3>10. Highway Driving</h3>
+                    <p>Highway driving requires special skills and awareness:</p>
+                    <ul>
+                        <li>Use the on-ramp to match highway speed before merging</li>
+                        <li>Check mirrors and blind spots before merging</li>
+                        <li>Maintain consistent speed with traffic flow</li>
+                        <li>Keep right except to pass</li>
+                        <li>Increase following distance (3+ seconds)</li>
+                        <li>Check mirrors every 8-10 seconds</li>
+                        <li>Plan exits well in advance - don't make last-minute lane changes</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <h3>11. Night Driving</h3>
+                    <p>Night driving presents unique challenges:</p>
+                    <ul>
+                        <li>Reduce speed and increase following distance</li>
+                        <li>Use headlights properly (low beams in traffic)</li>
+                        <li>Avoid looking directly at oncoming headlights</li>
+                        <li>Keep windshield clean inside and out</li>
+                        <li>Be extra alert for pedestrians and animals</li>
+                        <li>If tired, pull over in a safe location to rest</li>
+                    </ul>
+                </div>
+                
+                <div class="step">
+                    <h3>12. Adverse Weather Driving</h3>
+                    <p>Adjust your driving for weather conditions:</p>
+                    <h4>Rain:</h4>
+                    <ul>
+                        <li>Reduce speed and increase following distance</li>
+                        <li>Avoid sudden movements (steering, braking, acceleration)</li>
+                        <li>Use headlights (not just daytime running lights)</li>
+                        <li>Be aware of hydroplaning risk</li>
+                    </ul>
+                    
+                    <h4>Snow/Ice:</h4>
+                    <ul>
+                        <li>Reduce speed significantly</li>
+                        <li>Accelerate and brake very gradually</li>
+                        <li>Use lower gears for better control</li>
+                        <li>Steer into skids (turn wheels in direction of rear skid)</li>
+                        <li>Carry emergency supplies (blanket, shovel, etc.)</li>
+                    </ul>
+                    
+                    <h4>Fog:</h4>
+                    <ul>
+                        <li>Use low beam headlights (high beams reflect back)</li>
+                        <li>Reduce speed and increase following distance</li>
+                        <li>Listen for traffic you can't see</li>
+                        <li>Use windshield wipers and defroster to maintain visibility</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="instructors">
+                <h2>Our Certified Instructors</h2>
+                <p>All Success Driving School instructors are:</p>
+                <ul>
+                    <li>State-certified driving educators</li>
+                    <li>Fully licensed with clean driving records</li>
+                    <li>CPR and first aid certified</li>
+                    <li>Background checked</li>
+                    <li>Trained in defensive driving techniques</li>
+                    <li>Patient and experienced with nervous drivers</li>
+                </ul>
+                <p>Our instructors complete ongoing training to stay current with the latest:</p>
+                <ul>
+                    <li>Traffic laws and regulations</li>
+                    <li>Vehicle safety technology</li>
+                    <li>Teaching methodologies</li>
+                    <li>Defensive driving strategies</li>
+                </ul>
+            </section>
+
+            <section id="testimonials">
+                <h2>What Our Students Say</h2>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <div class="quote">"I was terrified to drive before taking the beginner course at Success. My instructor was so patient and helped me build confidence. I passed my test on the first try!"</div>
+                        <div class="author">-kabir K., Age 17</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="quote">"After 20 years of not driving, the refresher course got me back on the road safely. The instructor tailored the lessons to my specific needs."</div>
+                        <div class="author">- Michael T., Age 58</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="quote">"The defensive driving course taught me skills that probably saved me from an accident last winter. Worth every penny!"</div>
+                        <div class="author">- Adebayo L., Age 34</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="contact-info">
+            <div>
+                <h3>Contact Us</h3>
+                <p>Opposite Queen Elizabeth Secondary School <br>
+                     Sabojo Complex, Sawmill Area Ilorin</p>
+                <p>Kwara State </p>
+                <p>Phone: 09032358646
+                    ,08146155888
+                </p>
+               
+                <p>Email: successdrivingschool12@gmail.com</p>
+            </div>
+            <div>
+                <h3>Hours</h3>
+                <p>Monday-Friday: 8am-8pm</p>
+                <p>Saturday: 9am-5pm</p>
+                <p>Sunday: Closed</p>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+        </div>
+        <p>&copy; 2023 Success Driving School. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            
+            // In a real application, you would send this data to a server
+            console.log('Registration submitted:', { fullName, email });
+            
+            // Show hidden content
+            document.getElementById('hiddenContent').style.display = 'block';
+            
+            // Scroll to content
+            document.getElementById('hiddenContent').scrollIntoView({ behavior: 'smooth' });
+            
+            // Reset form
+            this.reset();
+            
+            // Show thank you message (in a real app, you might redirect or show a modal)
+            alert('Thank you for registering, ' + fullName + '! You now have access to all course details.');
+        });
+    </script>
+</body>
+</html>

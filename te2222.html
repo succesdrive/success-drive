@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Traffic Signs Reference</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --danger: #e74c3c;
+            --warning: #f39c12;
+            --success: #2ecc71;
+            --light: #ecf0f1;
+            --dark: #34495e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            background-color: var(--dark);
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--secondary);
+        }
+        
+        .category {
+            margin: 30px 0;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .category h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .signs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .sign-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .sign-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .sign-number {
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .sign-content {
+            padding: 15px;
+        }
+        
+        .sign-content h3 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .sign-image {
+            height: 150px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .sign-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .signs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Category specific colors */
+        .danger-signs {
+            border-left: 4px solid var(--danger);
+        }
+        
+        .prohibitory-signs {
+            border-left: 4px solid var(--warning);
+        }
+        
+        .mandatory-signs {
+            border-left: 4px solid var(--success);
+        }
+        
+        .informative-signs {
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .safety-tips {
+            border-left: 4px solid #9b59b6;
+        }
+        
+        .fallback-text {
+            padding: 20px;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Road Traffic Signs Reference</h1>
+            <p>Comprehensive guide to all traffic signs and their meanings</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="testing.html">Home</a></li>
+                <li><a href="#danger-signs">Danger/Warning Signs</a></li>
+                <li><a href="#prohibitory-signs">Prohibitory Signs</a></li>
+                <li><a href="#mandatory-signs">Mandatory Signs</a></li>
+                <li><a href="#informative-signs">Informative Signs</a></li>
+                <li><a href="#safety-tips">Safety Tips</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <section id="danger-signs" class="category danger-signs">
+            <h2>Danger/Warning Signs</h2>
+            <div class="signs-grid">
+                <div class="sign-card">
+                    <div class="sign-number">1</div>
+                    <div class="sign-image">
+                        <img src="lined barrier.jpg" alt="Railway Crossing with Gate" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Railway Crossing with Gate</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Railway Level Crossing with Gate</h3>
+                        <p>Warning of railway crossing with gates ahead</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">2</div>
+                    <div class="sign-image">
+                        <img src="no line.jpg" alt="Railway Crossing without Gate" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Railway Crossing without Gate</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Railway Level Crossing without Gate</h3>
+                        <p>Warning of railway crossing without gates ahead</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">17</div>
+                    <div class="sign-image">
+                        <img src="t right.jpg" alt="Dangerous Bend Right" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Dangerous Bend Right</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Dangerous Bend to Right</h3>
+                        <p>Warning of sharp right bend ahead</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">19</div>
+                    <div class="sign-image">
+                        <img src="t left.jpg" alt="Dangerous Bend Left" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Dangerous Bend Left</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Dangerous Bend to Left</h3>
+                        <p>Warning of sharp left bend ahead</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">26</div>
+                    <div class="sign-image">
+                        <img src="slipery.jpg" alt="Slippery Surface" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Slippery Surface</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Slippery Road Surface</h3>
+                        <p>Warning of slippery conditions ahead</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">24</div>
+                    <div class="sign-image">
+                        <img src="wild ani.jpg" alt="Beware of Animals" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Beware of Animals</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Beware of Animals</h3>
+                        <p>Warning of animals crossing area</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="prohibitory-signs" class="category prohibitory-signs">
+            <h2>Regulatory Signs (Prohibitory)</h2>
+            <div class="signs-grid">
+                <div class="sign-card">
+                    <div class="sign-number">STOP</div>
+                    <div class="sign-image">
+                        <img src="s  ss .jpg" alt="STOP Sign" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>STOP Sign</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>STOP</h3>
+                        <p>Come to complete stop at intersection</p>
+                        <p>Variations: STOP AT INTERSECTION, POLICE CHECK, HIGHWAY SURVEY</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">80</div>
+                    <div class="sign-image">
+                        <img src="50 speed li.jpg" alt="Speed Limit 80" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Speed Limit 80</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Speed Limit (Maximum)</h3>
+                        <p>Maximum speed limit of 80 km/h</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">NO LEFT</div>
+                    <div class="sign-image">
+                        <img src="no left t.jpg" alt="No Left Turn" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>No Left Turn</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>No Left Turn</h3>
+                        <p>Left turns prohibited</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">NO RIGHT</div>
+                    <div class="sign-image">
+                        <img src="no right t.jpg" alt="No Right Turn" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>No Right Turn</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>No Right Turn</h3>
+                        <p>Right turns prohibited</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">NO U-TURN</div>
+                    <div class="sign-image">
+                        <img src="no u t.jpg" alt="No U-Turn" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>No U-Turn</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>No U-Turn</h3>
+                        <p>U-turns prohibited</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">NO ENTRY</div>
+                    <div class="sign-image">
+                        <img src="no v e .jpg" alt="No Entry" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>No Entry</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>No Entry for All Vehicles</h3>
+                        <p>Entry prohibited for all vehicles</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">NO PARKING</div>
+                    <div class="sign-image">
+                        <img src="no parking.jpg" alt="No Parking" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>No Parking</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Parking Prohibited</h3>
+                        <p>No parking in this area</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">NO STOPPING</div>
+                    <div class="sign-image">
+                        <img src="s  ss .jpg" alt="No Stopping" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>No Stopping</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>No Stopping</h3>
+                        <p>Stopping prohibited in this area</p>
+                    </div>
+                </div>
+            </div>
+   
+                                                
+        </section>
+        
+        <section id="mandatory-signs" class="category mandatory-signs">
+            <h2>Regulatory Signs (Mandatory)</h2>
+            <div class="signs-grid">
+                <div class="sign-card">
+                    <div class="sign-number">KEEP RIGHT</div>
+                    <div class="sign-image">
+                        <img src="keep right.jpg" alt="Keep Right" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Keep Right</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Keep Right</h3>
+                        <p>Drivers must keep to the right</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">30</div>
+                    <div class="sign-image">
+                        <img src="30 spd.jpg" alt="Speed Limit 30" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Speed Limit 30</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Speed Limit (Minimum)</h3>
+                        <p>Minimum speed limit of 30 km/h</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">ONE WAY</div>
+                    <div class="sign-image">
+                        <img src="one way.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>One Way</h3>
+                        <p>Traffic flows in one direction only</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">ROUNDABOUT</div>
+                    <div class="sign-image">
+                        <img src="round about.jpg" alt="Roundabout" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Roundabout</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Roundabout</h3>
+                        <p>Roundabout ahead - give way to traffic from your right</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">CYCLE TRACK</div>
+                    <div class="sign-image">
+                        <img src="round about.jpg" alt="Cycle Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Cycle Track</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Compulsory Cycle Track</h3>
+                        <p>Cyclists must use this track</p>
+                    </div>
+                </div>
+                <div class="sign-card">
+                    <div class="sign-number">2 WAY AHEAD</div>
+                    <div class="sign-image">
+                        <img src="2 WAY AHEAD.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>two way ahead</h3>
+                        <p> its actually 4 lane 2 way</p>
+                    </div>
+
+                <div class="sign-card">
+                    <div class="sign-number">CROSS ROAD</div>
+                    <div class="sign-image">
+                        <img src="CROSSROAD.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>CROSS ROAD</h3>
+                        <p>Pedestrians must use this path</p>
+                    </div>
+                 
+                        <div class="sign-card">
+                            <div class="sign-number">80 MAX</div>
+                            <div class="sign-image">
+                                <img src="80 MAX.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                            </div>
+                            <div class="sign-content">
+                                <h3>80 MAX</h3>
+                                <p>The speed limit is 80</p>
+                            </div>
+
+                            <div class="sign-card">
+                                <div class="sign-number">BEWARE OF ANIMALS</div>
+                                <div class="sign-image">
+                                    <img src="BEWARE OF ANIMALS.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                </div>
+                                <div class="sign-content">
+                                    <h3>BEWARE OF ANIMALS</h3>
+                                    <p>beware of animals</p>
+                                </div>
+
+                                <div class="sign-card">
+                                    <div class="sign-number">BLIND PEOPLE CR</div>
+                                    <div class="sign-image">
+                                        <img src="BLIND PEOPLE CR.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                    </div>
+                                    <div class="sign-content">
+                                        <h3>BLIND PEOPLE CR</h3>
+                                        <p>BLIND PEOPLE Crossing BEWARE</p>
+                                    </div>
+
+                                    <div class="sign-card">
+                                        <div class="sign-number">CARRIAGE WAY WIDENS</div>
+                                        <div class="sign-image">
+                                            <img src="CARRIAGE WAY WIDENS.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                        </div>
+                                        <div class="sign-content">
+                                            <h3>CARRIAGE WAY WIDENS</h3>
+                                            <p>THE NARROW WAY WIDENS</p>
+                                        </div>
+
+                                        <div class="sign-card">
+                                            <div class="sign-number">CARRIAGEWAY NARROWS</div>
+                                            <div class="sign-image">
+                                                <img src="CARRIAGEWAY NARROWS.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                            </div>
+                                            <div class="sign-content">
+                                                <h3>CARRIAGEWAY NARROWS</h3>
+                                                <p>WIDE WAY NARROWS</p>
+                                            </div>
+
+                                            <div class="sign-card">
+                                                <div class="sign-number">CHILDREN C</div>
+                                                <div class="sign-image">
+                                                    <img src="CHILDREN C.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                                </div>
+                                                <div class="sign-content">
+                                                    <h3>CHILDREN C</h3>
+                                                    <p>CHILDREN CROSSING</p>
+                                                </div>
+
+                                                <div class="sign-card">
+                                                    <div class="sign-number">CROSSROAD</div>
+                                                    <div class="sign-image">
+                                                        <img src="CROSSROAD.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                                    </div>
+                                                    <div class="sign-content">
+                                                        <h3>CROSSROAD</h3>
+                                                        <p>ROADS ARE CROSSED</p>
+                                                    </div>
+
+                                                    <div class="sign-card">
+                                                        <div class="sign-number">CUSTOM STOP</div>
+                                                        <div class="sign-image">
+                                                            <img src="CUSTOM STOP.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                                        </div>
+                                                        <div class="sign-content">
+                                                            <h3>CUSTOM STOP</h3>
+                                                            <p>WRITE YOUR CUSTOM STOP</p>
+                                                        </div>
+
+                                                        <div class="sign-card">
+                                                            <div class="sign-number">D BEND LEFT</div>
+                                                            <div class="sign-image">
+                                                                <img src="D BEND LEFT.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                                            </div>
+                                                            <div class="sign-content">
+                                                                <h3>D BEND LEFT</h3>
+                                                                <p>SLOW DOWN DANGEROUS TURN TO THE LEFT</p>
+                                                            </div>
+
+                                                            <div class="sign-card">
+                                                                <div class="sign-number">D BEND RIGHT</div>
+                                                                <div class="sign-image">
+                                                                    <img src="D BEND RIGHT.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                                                </div>
+                                                                <div class="sign-content">
+                                                                    <h3>D BEND RIGHT</h3>
+                                                                    <p>SLOW DOWN DANGEROUS TURN TO THE RIGHT</p>
+                                                                </div>
+
+                                                                <div class="sign-card">
+                                                                    <div class="sign-number">D DOUBLE BEND</div>
+                                                                    <div class="sign-image">
+                                                                        <img src="D DOUBLE BEND.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                                                    </div>
+                                                                    <div class="sign-content">
+                                                                        <h3>D DOUBLE BEND</h3>
+                                                                        <p>DANGEROUS DOUBLE BEND</p>
+                                                                    </div>
+
+                                                                    <div class="sign-card">
+                                                                        <div class="sign-number">DIRECTION TO BE FOLLOWED</div>
+                                                                        <div class="sign-image">
+                                                                            <img src="DIRECTION TO BE FOLLOWED.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                                                        </div>
+                                                                        <div class="sign-content">
+                                                                            <h3>DIRECTION TO BE FOLLOWED</h3>
+                                                                            <p>THERE IS NO OTHER WAY</p>
+                                                                        </div>
+
+                                                                        <div class="sign-card">
+                                                                            <div class="sign-number">DIVERSION OR ONE WAY</div>
+                                                                            <div class="sign-image">
+                                                                                <img src="DIVERSION OR ONE WAY.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                                                            </div>
+                                                                            <div class="sign-content">
+                                                                                <h3>DIVERSION OR ONE WAY</h3>
+                                                                                <p>MANDATORY ONE WAY ROAD</p>
+                                                                            </div>
+
+                                                                            <div class="sign-card">
+                                                                                <div class="sign-number">FALLING ROCKS</div>
+                                                                                <div class="sign-image">
+                                                                                    <img src="FALLING ROCKS.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                                                                </div>
+                                                                                <div class="sign-content">
+                                                                                    <h3>FALLING ROCKS</h3>
+                                                                                    <p>DANGER FALLING ROCKS AHEAD</p>
+                                                                                </div>
+
+                                                                                <div class="sign-card">
+                                                                                    <div class="sign-number">FERRY</div>
+                                                                                    <div class="sign-image">
+                                                                                        <img src="FERRY.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                                                                    </div>
+                                                                                    <div class="sign-content">
+                                                                                        <h3>FERRY</h3>
+                                                                                        <p>FERRY CROSSING</p>
+                                                                                    </div>
+
+                                                                                    <div class="sign-card">
+                                                                                        <div class="sign-number">GENERAL DANGER</div>
+                                                                                        <div class="sign-image">
+                                                                                            <img src="GENERAL DANGER.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                                                                        </div>
+                                                                                        <div class="sign-content">
+                                                                                            <h3>GENERAL DANGER</h3>
+                                                                                            <p>DANGER GENERALLY</p>
+                                                                                        </div>
+
+                                                                                        <div class="sign-card">
+                                                                                            <div class="sign-number"></div>
+                                                                                            <div class="sign-image">
+                                                                                                <img src="ped croz.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                                                                            </div>
+                                         <div class="sign-content">
+                                          <h3>Pedestrian Track</h3>
+                                           <p>Pedestrians must use this path</p>
+ </div>
+     <div class="sign-content">
+                                                                                            <h3>GENERAL DANGER</h3>
+                                                                                            <p>DANGER GENERALLY</p>
+                                                                                        </div>
+
+                                                                                        <div class="sign-card">
+                                                                                            <div class="sign-number"></div>
+                                                                                            <div class="sign-image">
+                                                                                                <img src="ped croz.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                                                                                            </div>
+                                         <div class="sign-content">
+                                          <h3>Pedestrian Track</h3>
+                                           <p>Pedestrians must use this path</p>
+ </div>
+
+
+ <div class="sign-card">
+    <div class="sign-number">GIVEWAY</div>
+    <div class="sign-image">
+        <img src="GIVEWAY.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+    </div>
+    <div class="sign-content">
+        <h3>GIVEWAY</h3>
+        <p> its actually 4 lane 2 way</p>
+    </div>
+
+    <div class="sign-card">
+        <div class="sign-number">HIGHWAY SURVEY</div>
+        <div class="sign-image">
+            <img src="HIGHWAY SURVEY.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+        </div>
+        <div class="sign-content">
+            <h3>HIGHWAY SURVEY</h3>.
+            <p>BEWARE OF SURVEY PERSONNEL</p>
+        </div>
+
+   
+    
+        
+           
+ <div class="sign-card">
+<div class="sign-number">INTERSECTION WITH MAJOR ROAD </div>
+ <div class="sign-image">
+<img src="INTERSECTION WITH MAJOR ROAD.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>INTERSECTION WITH MAJOR ROAD</h3>
+<p>MAJOR ROAD INTERSECTION</p>
+ </div>
+</div>
+
+
+   
+           
+ <div class="sign-card">
+<div class="sign-number">INTERSECTION WITH MINOR ROAD</div>
+ <div class="sign-image">
+<img src="INTERSECTION WITH MINOR ROAD.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>INTERSECTION WITH MINOR ROAD</h3>
+<p>MINOR ROAD INTERSECTION</p>
+ </div>
+</div>
+
+
+   
+           
+ <div class="sign-card">
+<div class="sign-number">LITTERING PROHIBITED</div>
+ <div class="sign-image">
+<img src="LITTERING PROHIBITED.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>LITTERING PROHIBITED</h3>
+<p>NO LITTERING</p>
+ </div>
+</div>
+
+
+   
+           
+<div class="sign-card">
+    <div class="sign-number">LONG GRADE</div>
+     <div class="sign-image">
+    <img src="LONG GRADE.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+    </div>
+    <div class="sign-content">
+    <h3>LONG GRADE</h3>
+    <p>DANGEROUS HILL</p>
+     </div>
+    </div>
+    
+    
+   
+           
+ <div class="sign-card">
+<div class="sign-number">LOOSE CHIPPINGS</div>
+ <div class="sign-image">
+<img src="LOOSE CHIPPINGS.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>LOOSE CHIPPINGS</h3>
+<p>LOOSE CHIPPINGS</p>
+ </div>
+</div>
+
+
+   
+           
+ <div class="sign-card">
+<div class="sign-number">NARROW BRIDGE</div>
+ <div class="sign-image">
+<img src="NARROW BRIDGE.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>NARROW BRIDGE</h3>
+<p>BRIDGE AHEAD IS NARROW</p>
+ </div>
+</div>
+
+
+   
+           
+ <div class="sign-card">
+<div class="sign-number">NO ENTRIES FOR LORRIES</div>
+ <div class="sign-image">
+<img src="NO ENTRIES FOR LORRIES.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>NO ENTRIES FOR LORRIES</h3>
+<p>LORRIES CANNOT ENTER</p>
+ </div>
+</div>
+
+
+   
+           
+ <div class="sign-card">
+<div class="sign-number">NO ENTRY FOR 2m WIDTH VEHICLES</div>
+ <div class="sign-image">
+<img src="NO ENTRY FOR 2m WIDTH VEHICLES.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>NO ENTRY FOR 2m WIDTH VEHICLES </h3>
+<p>NO ENTRY FOR 2m WIDTH VEHICLES</p>
+ </div>
+</div>
+
+
+   
+           
+ <div class="sign-card">
+<div class="sign-number">NO HORN</div>
+ <div class="sign-image">
+<img src="NO HORN.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>NO HORN</h3>
+<p>NO HORNS ALLOWED</p>
+ </div>
+</div>
+
+
+   
+           
+ <div class="sign-card">
+<div class="sign-number">NO OVERTAKING</div>
+ <div class="sign-image">
+<img src="NO OVERTAKING.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>NO OVERTAKING</h3>
+<p>OVERTAKING IS NOT ALLOWED</p>
+ </div>
+</div>
+
+
+   
+           
+ <div class="sign-card">
+<div class="sign-number">NO WAITING</div>
+ <div class="sign-image">
+<img src="NO WAITING.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>NO WAITING</h3>
+<p>WAITING NOT ALLOWED</p>
+ </div>
+</div>
+
+
+   
+           
+ <div class="sign-card">
+<div class="sign-number">PEDESTRIAN C (2)</div>
+ <div class="sign-image">
+<img src="PEDESTRIAN C (2).jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>PEDESTRIAN C (2)</h3>
+<p>BEWARE pedestrian crossing</p>
+ </div>
+</div>
+
+
+   
+           
+ <div class="sign-card">
+<div class="sign-number">PEDESTRIAN CROSSING</div>
+ <div class="sign-image">
+<img src="PEDESTRIAN C.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>PEDESTRIAN C</h3>
+<p>BEWARE PEDESTRIAN CROSSING</p>
+ </div>
+</div>
+
+
+   
+           
+ <div class="sign-card">
+<div class="sign-number">PRIORITY ROAD AHEAD</div>
+ <div class="sign-image">
+<img src="PRIORITY ROAD AHEAD.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>PRIORITY ROAD AHEAD</h3>
+<p>275 PRIORITY ROAD</p>
+ </div>
+</div>
+
+          
+ <div class="sign-card">
+<div class="sign-number">PROCEED 1 LANE</div>
+ <div class="sign-image">
+<img src="PROCEED 1 LANE.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>PROCEED 1 LANE</h3>
+<p>1 LANE</p>
+ </div>
+</div>
+          
+ <div class="sign-card">
+<div class="sign-number">PROCEED 2 LANES</div>
+ <div class="sign-image">
+<img src="PROCEED 2 LANES.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>PROCEED 2 LANES</h3>
+<p>2 LANES</p>
+ </div>
+</div>
+          
+ <div class="sign-card">
+<div class="sign-number">RAIL CRossing</div>
+ <div class="sign-image">
+<img src="RAIL CRossing.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>RAIL CRossing</h3>
+<p>no crossing on the railway</p>
+ </div>
+</div>
+          
+ <div class="sign-card">
+<div class="sign-number">ROUNDABOUT (2)</div>
+ <div class="sign-image">
+<img src="ROUNDABOUT (2).jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>ROUNDABOUT (2)</h3>
+<p>ROUNDABOUT (2)</p>
+ </div>
+</div>
+          
+ <div class="sign-card">
+<div class="sign-number">ROUNDABOUT</div>
+ <div class="sign-image">
+<img src="ROUNDABOUT.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>ROUNDABOUT</h3>
+<p>ROUNDABOUT AHEAD</p>
+ </div>
+</div>
+          
+ <div class="sign-card">
+<div class="sign-number">SLIPPERY SURFACE</div>
+ <div class="sign-image">
+<img src="SLIPPERY SURFACE.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>SLIPPERY SURFACE</h3>
+<p>SLIPPERY SURFACE</p>
+ </div>
+</div>
+          
+ <div class="sign-card">
+<div class="sign-number">STOP POLICE</div>
+ <div class="sign-image">
+<img src="STOP POLICE.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>STOP POLICE</h3>
+<p>275 STOP POLICE</p>
+ </div>
+</div>
+          
+ <div class="sign-card">
+<div class="sign-number">TT (2)</div>
+ <div class="sign-image">
+<img src="TT (2).jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>TT (2)</h3>
+<p>T JUNCTION</p>
+ </div>
+</div>
+          
+ <div class="sign-card">
+<div class="sign-number">TT</div>
+ <div class="sign-image">
+<img src="TT.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>TT</h3>
+<p>TT</p>
+ </div>
+</div>
+          
+ <div class="sign-card">
+<div class="sign-number">UNEVEN ROADS</div>
+ <div class="sign-image">
+<img src="UNEVEN ROADS.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>UNEVEN ROADS</h3>
+<p>THE PLAIN IS UNEVEN OR NOT EQUALS</p>
+ </div>
+</div>
+          
+ <div class="sign-card">
+<div class="sign-number">Y (2)</div>
+ <div class="sign-image">
+<img src="Y (2).jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>Y (2)</h3>
+<p>Y JUNCTION</p>
+ </div>
+</div>
+          
+ <div class="sign-card">
+<div class="sign-number">Y (3)</div>
+ <div class="sign-image">
+<img src="Y (3).jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>Y (3)</h3>
+<p>Y JUNCTION</p>
+ </div>
+</div>
+          
+ <div class="sign-card">
+<div class="sign-number">Y</div>
+ <div class="sign-image">
+<img src="Y.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>Y</h3>
+<p>Y JUNCTIONS</p>
+ </div>
+</div>
+          
+ <div class="sign-card">
+<div class="sign-number">PRIORITY ROAD AHEAD</div>
+ <div class="sign-image">
+<img src="PRIORITY ROAD AHEAD.jpg" alt="One Way" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>One Way</div>';">
+</div>
+<div class="sign-content">
+<h3>PRIORITY ROAD AHEAD</h3>
+<p>275 PRIORITY ROAD</p>
+ </div>
+</div>
+ 
+
+
+
+
+
+
+
+
+
+
+
+ <div class="sign-card">
+                    <div class="sign-number">PEDESTRIAN</div>
+                    <div class="sign-image">
+                        <img src="ped croz.jpg" alt="Pedestrian Track" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Pedestrian Track</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Pedestrian Track</h3>
+                        <p>Pedestrians must use this path</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="informative-signs" class="category informative-signs">
+            <h2>Informative Signs</h2>
+            <div class="signs-grid">
+                <div class="sign-card">
+                    <div class="sign-number">HOSPITAL</div>
+                    <div class="sign-image">
+                        <img src="hospital.jpg" alt="Hospital" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Hospital</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Hospital</h3>
+                        <p>Direction to nearest hospital</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">TELEPHONE</div>
+                    <div class="sign-image">
+                        <img src="tele.jpg" alt="Telephone" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Telephone</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Telephone</h3>
+                        <p>Location of public telephone</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">FUEL</div>
+                    <div class="sign-image">
+                        <img src="fuel.jpg" alt="Filling Station" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Filling Station</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Filling Station</h3>
+                        <p>Direction to nearest fuel station</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">MOTOR PARK</div>
+                    <div class="sign-image">
+                        <img src="motor p.jpg" alt="Motor Park" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Motor Park</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Motor Park</h3>
+                        <p>Direction to vehicle parking area</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">REST AREA</div>
+                    <div class="sign-image">
+                        <img src="rest arez.jpg" alt="Rest Area" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Rest Area</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Rest Area</h3>
+                        <p>Location of rest stop facilities</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-number">CONSTRUCTION</div>
+                    <div class="sign-image">
+                        <img src="constr.jpg" alt="Construction Zone" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'fallback-text\'>Construction Zone</div>';">
+                    </div>
+                    <div class="sign-content">
+                        <h3>Construction Zone</h3>
+                        <p>Warning of construction work ahead</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-content">
+                        <h3>ROAD ACCIDENT PREVENTION</h3>
+                        <p>.All driver should not drive when fatigued, under the influence of alcohol <br><br>
+                            annoyance concentration is less and medicaly unfit
+                            <br><br> Medical unfitness:should not drive when blood pressure is very high and cases of heart failure <br><br>
+<br>
+                           
+                            to a parking possition.</p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-content">
+                        <h3>Safe Overtaking</h3>
+                        <p>Avoid dangerous overtaking at bends, junctions, or on hills. <br> <br>
+                        Avoid dangerous over taking at bends, junction, on brow of a hill <br><br>
+                        When you have a flat tyre or tyre burst on motion do not panic and do not apply brake,
+                        hold steering firmly releasing your foot from the accelerator and gradually steering 
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="sign-card">
+                    <div class="sign-content">
+                        <h3>ROAD ACCIDENT PREVENTION</h3>
+                        <p>Avoid dangerous overtaking at bends, junctions, or on hills.
+                            Do not U turn, where doing so will constitute danger to the other road users
+                            <br><br>  Visibility:poor sighted people should not drive because they constitute immense dangers on the road 
+                            <br>All motorist should strictly obey speed limit 
+                        </p>
+                    </div>
+                </div>
+             </div>
+            
+           
+
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Road Traffic Signs Reference. All rights reserved.</p>
+            <p></p>
+        </div>
+    </footer>
+</body>
+</html>

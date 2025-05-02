@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Driving School - Learn to Drive Safely</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #f39c12;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e67e22;
+        }
+        
+        /* Main Content */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+            color: var(--primary);
+        }
+        
+        /* Services Section */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* Registration Form */
+        .registration-form {
+            background-color: white;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .form-submit {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .form-submit:hover {
+            background-color: #1a252f;
+        }
+        
+        /* Dashboard (Post-Registration) */
+        .dashboard {
+            display: none;
+        }
+        
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .dashboard-welcome {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .dashboard-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dashboard-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        
+        .price-list {
+            list-style: none;
+        }
+        
+        .price-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .price-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .price-list li span:last-child {
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        .traffic-sign {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .traffic-sign-img {
+            width: 60px;
+            height: 60px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            background-size: cover;
+        }
+        
+        /* Safety Tips */
+        .safety-tip {
+            margin-bottom: 20px;
+        }
+        
+        .safety-tip h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ddd;
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .registration-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Pre-Registration Interface -->
+    <div id="pre-registration">
+        <header>
+            <div class="container header-container">
+                <a href="#" class="logo">Success <span>Driving School</span></a>
+                <button class="mobile-menu-btn">☰</button>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#service">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#" id="register-btn">Register</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Master the Road with Confidence</h1>
+                <p>Success Driving School offers comprehensive driver education programs designed to make you a safe, confident, and responsible driver.</p>
+                <a href="#register" class="btn">Start Your Journey Today</a>
+            </div>
+        </section>
+
+        <section class="section" id="services">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="services">
+                    <div class="service-card">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="service-content">
+                            <h3>Beginner Driver Education</h3>
+                            <p>Perfect for first-time drivers, our comprehensive program covers all the basics of safe driving.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="service-content">
+                            <h3>Defensive Driving Courses</h3>
+                            <p>Learn advanced techniques to anticipate hazards and avoid accidents on the road.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="service-content">
+                            <h3>Road Test Preparation</h3>
+                            <p>Get personalized coaching to pass your driving test with flying colors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="register">
+            <div class="container">
+                <h2 class="section-title">Register Now</h2>
+                <div class="registration-form">
+                    <form id="driving-school-form">
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="course">Select Course</label>
+                            <select id="course" required>
+                                <option value="">Choose a course</option>
+                                <option value="beginner">Beginner Driver Education</option>
+                                <option value="defensive">Defensive Driving Course</option>
+                                <option value="road-test">Road Test Preparation</option>
+                                <option value="refresher">Refresher Course</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="form-submit">Complete Registration</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Post-Registration Dashboard (Hidden Initially) -->
+    <div id="dashboard" class="dashboard">
+        <header>
+            <div class="container header-container">
+                <a href="#" class="logo">Success <span>Driving School</span></a>
+                <nav>
+                    <ul>
+                        <li><a href="#dashboard-home">Dashboard</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#learning">Learning</a></li>
+                        <li><a href="#safety">Safety Tips</a></li>
+                        <li><a href="#" id="logout-btn">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="section" id="dashboard-home">
+            <div class="container">
+                <div class="dashboard-header">
+                    <h2 class="dashboard-welcome">Welcome, <span id="user-name">Student</span>!</h2>
+                    <p>Your journey to becoming a safe, confident driver starts here.</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card" id="pricing">
+                        <h3>Our Pricing</h3>
+                        <ul class="price-list">
+                            <li>
+                                <span>Beginner Driver Course (20 hours)</span>
+                                <span>$499</span>
+                            </li>
+                            <li>
+                                <span>Defensive Driving Course (8 hours)</span>
+                                <span>$299</span>
+                            </li>
+                            <li>
+                                <span>Road Test Preparation (5 hours)</span>
+                                <span>$199</span>
+                            </li>
+                            <li>
+                                <span>Refresher Course (3 hours)</span>
+                                <span>$149</span>
+                            </li>
+                            <li>
+                                <span>Private Lesson (per hour)</span>
+                                <span>$65</span>
+                            </li>
+                        </ul>
+                    </div>
+
+            
+
+                    <div class="dashboard-card" id="safety">
+                        <h3>Road Accident Prevention</h3>
+                        <div class="safety-tip">
+                            <h4>Maintain Safe Following Distance</h4>
+                            <p>Keep at least 3 seconds of distance between you and the vehicle in front. Increase this in bad weather.</p>
+                        </div>
+                        <div class="safety-tip">
+                            <h4>Eliminate Distractions</h4>
+                            <p>Put your phone away, set your GPS before driving, and avoid eating while driving.</p>
+                        </div>
+                        <div class="safety-tip">
+                            <h4>Regular Vehicle Maintenance</h4>
+                            <p>Check tires, brakes, lights, and fluids regularly to ensure your vehicle is in good condition.</p>
+                        </div>
+                        <div class="safety-tip">
+                            <h4>Obey Speed Limits</h4>
+                            <p>Speed limits are set for ideal conditions. Adjust your speed for weather, traffic, and road conditions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Success Driving School</h3>
+                    <p>Teaching safe driving habits since 2005. Our certified instructors are committed to your success on the road.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>123 Drive Safe Street</li>
+                        <li>Cityville, ST 12345</li>
+                        <li>Phone: (555) 123-4567</li>
+                        <li>Email: info@successdriving.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Success Driving School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle between pre-registration and dashboard interfaces
+        document.getElementById('register-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('pre-registration').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        });
+        
+        document.getElementById('logout-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('pre-registration').style.display = 'block';
+            document.getElementById('dashboard').style.display = 'none';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        });
+        
+        // Form submission
+        document.getElementById('driving-school-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('full-name').value;
+            
+            // Show dashboard and set user name
+            document.getElementById('pre-registration').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+            document.getElementById('user-name').textContent = name.split(' ')[0];
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // In a real application, you would send this data to a server
+            console.log('Form submitted:', {
+                name: name,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                course: document.getElementById('course').value
+            });
+        });
+        
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Responsive adjustments
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                document.querySelector('nav ul').classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
